@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kite's Blogs</title>
+
+    <style>
+        :root {
+            --bg: #F8F5F0;
+            --text: #1c1c1c;
+            --line: #999;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: Georgia, serif;
+            line-height: 1.9;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            padding: 50px 25px;
+        }
+
+        h1 {
+            font-size: 3.6rem;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: var(--text);
+            text-decoration: none;
+            position: relative;
+        }
+
+        a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 1px;
+            background: var(--text);
+            transition: width .25s ease;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        a:hover {
+            opacity: .8;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--line);
+            margin: 24px 0 42px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 24px;
+        }
+
+        .socials {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        footer {
+            margin-top: 60px;
+            color: #666;
+            font-size: .95rem;
+        }
+
+        @media(max-width:768px) {
+
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1.05rem;
+            }
+
+            nav {
+                gap: 18px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Kite's Blogs</h1>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="./tech-blogs/index.html">Tech Blogs</a>
+            <a href="./personal-blogs/index.html">Personal Blogs</a>
+        </nav>
+
+        <hr>
+
+        <p>
+            Hi, I'm <strong>Prachiti Kitey</strong>.
+        </p>
+
+        <p>
+            I'm constantly curious about how technology works behind the scenes.
+        </p>
+
+        <p>
+            Whether it's a new idea, an interesting problem, or something I'm
+            trying to understand, I like writing things down as a way to learn.
+        </p>
+
+        <p>
+            This blog is a collection of those notes, experiments, projects,
+            observations and occasional stories.
+        </p>
+
+        <hr>
+
+        <div class="socials">
+            <a href="https://github.com/Prachiti27" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/prachiti-kitey-24b348281/" target="_blank">LinkedIn</a>
+            <a href="https://x.com/" target="_blank">X</a>
+        </div>
+
+        <footer>
+            © 2026 Kite's Blogs
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

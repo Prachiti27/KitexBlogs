@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blogs | Kite's Blogs</title>
+
+    <style>
+        :root {
+            --bg: #F8F5F0;
+            --text: #1c1c1c;
+            --line: #999;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: Georgia, serif;
+            line-height: 1.9;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            padding: 50px 25px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: var(--text);
+            text-decoration: none;
+            position: relative;
+        }
+
+        a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 1px;
+            background: var(--text);
+            transition: width .25s ease;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--line);
+            margin: 20px 0 40px;
+        }
+
+        .empty {
+            color: #666;
+            font-style: italic;
+        }
+
+        .blog-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .blog {
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .blog-date {
+            color: #777;
+            font-size: .9rem;
+        }
+
+        @media(max-width:768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Tech Blogs</h1>
+
+        <p class="subtitle">
+            Notes from things I'm learning, building and trying to understand.
+        </p>
+
+        <a href="../index.html">← Home</a>
+
+        <hr>
+
+        <div class="blog">
+            <a href="dsa101.html">
+                <h2>DSA Fundamentals</h2>
+            </a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

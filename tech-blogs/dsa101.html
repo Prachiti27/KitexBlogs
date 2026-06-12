@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blogs | Kite's Blogs</title>
+
+    <style>
+        :root {
+            --bg: #F8F5F0;
+            --text: #1c1c1c;
+            --line: #999;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: Georgia, serif;
+            line-height: 1.9;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin: 30px auto;
+            border-radius: 8px;
+        }
+
+        h2 {
+            margin-top: 50px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            margin-top: 35px;
+            margin-bottom: 10px;
+        }
+
+        p,
+        ol {
+            margin-bottom: 18px;
+        }
+
+        .date {
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        ol {
+            padding-left: 25px;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            max-width: 700px;
+            max-height: 450px;
+            height: auto;
+            object-fit: contain;
+            margin: 35px auto;
+            border-radius: 8px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            padding: 50px 25px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        a {
+            color: var(--text);
+            text-decoration: none;
+            position: relative;
+        }
+
+        a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 1px;
+            background: var(--text);
+            transition: width .25s ease;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--line);
+            margin: 20px 0 40px;
+        }
+
+        .empty {
+            color: #666;
+            font-style: italic;
+        }
+
+        .blog-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .blog {
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .blog-date {
+            color: #777;
+            font-size: .9rem;
+        }
+
+        @media(max-width:768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>DSA Fundamentals</h1>
+
+        <div class="date">
+            May 2026
+        </div>
+        <h2>What is DSA?</h2>
+        <p>DSA stands for Data Structures and Algorithms. As the name suggest data structures are the way to organize or
+            store data for example, consider storing books within the library shelves where book is a data and library
+            shelves are data structure. Algorithms are the method to solve problems using data and data structures for
+            example finding book within the library.</p>
+        <img src="./assets/DSA101/DSA.png" alt="image">
+
+        <h2>Why is DSA important and Why should one learn it?</h2>
+        <p>Apart from all the things people say about DSA on the internet, such as making code faster and more
+            efficient, helping in technical interviews, and being useful in software development,I believe its biggest
+            benefit is that it teaches you how to think. It helps you break complex problems into smaller subproblems,
+            recognize patterns, and develop analytical thinking skills. So, while DSA may not always help directly, it
+            certainly helps indirectly in many aspects of problem-solving and decision-making.</p>
+
+        <h2>Data Structures</h2>
+        <p>There are two types of data structure as</p>
+
+        <h3>1. Linear Data Structure</h3>
+        <p>The data structure which stores data sequentially means one after another like students stand in line for
+            assembly. The major linear data structures are - </p>
+
+        <h3>Array</h3>
+        <p>Array is a collection of elements of same type in contiguous memory locations and allows us to access
+            elements using their index. The index in array starts from zero. Traditionally, array has fixed size. You
+            can imagine it as train coaches where train is equivalent to array and coach is equivalent to element in
+            array.</p>
+        <img src="assets/DSA101/array.png" alt="array-img">
+
+        <h3>Linked List</h3>
+        <p>Linked List is a collection of nodes which contains data and pointer to next node. It is stored
+            non-contiguously in memory, hence, random access is not possible and it is dynamic in size. Imagine it like
+            treasure hunt where each level provides clue or address of next level where level is data in node and clue
+            is pointer to next node.</p>
+        <img src="assets/DSA101/linkedlist.png" alt="LL-img">
+
+        <h3>Stack</h3>
+        <p>Stack follows the LIFO (Last In, First Out) principle, where the last element added is the first one to be
+            removed. Insertion and deletion are possible only at the top of the stack. Imagine it as a pile of plates
+            where the top plate is taken first, and so on.</p>
+        <img src="assets/DSA101/stack.png" alt="st-img">
+
+        <h3>Queue</h3>
+        <p>Queue follows a FIFO (First In, First Out) principle, where the first element added is the first one to be
+            removed. Insertion is done from the rear and deletion is done from the front of the queue. Imagine it like a
+            line of people waiting at a ticket counter where the person who joins the line first gets the ticket first
+        </p>
+        <img src="assets/DSA101/queue.png" alt="queue-img" />
+
+        <h3>2. Non-Linear Data Structure</h3>
+        <p>The data structure which does not store data sequentially, instead data is organized in hierarchical or
+            interconnected form, is called a non-linear data structure. Imagine it like a family tree where one person
+            can be connected to multiple family members rather than standing in a single line.</p>
+
+        <h3>Tree</h3>
+        <p>Tree is a non-linear data structure consisting of nodes connected in a hierarchical manner. The topmost node
+            is called the root node and each node can have multiple child nodes. Imagine it like a family tree where
+            grandparents are connected to parents and parents are connected to children, forming a hierarchy.</p>
+        <img src="assets/DSA101/tree.png" alt="tree-img" />
+
+        <h3>Graph</h3>
+        <p>Graph is a non-linear data structure consisting of vertices (nodes) and edges (connections between nodes).
+            Unlike trees, a node can be connected to any number of other nodes. Imagine it like a social network where
+            people are vertices and friendships between them are edges.</p>
+        <img src="assets/DSA101/graph.png" alt="graph-img" />
+
+        <h2>Algorithms</h2>
+        <p>Algorithm is a step-by-step procedure to solve a problem or perform a task. It takes some input, processes
+            it, and produces the desired output. A good algorithm solves the problem correctly and efficiently. Imagine
+            it like a recipe for making a dish where each step must be followed in a specific order to get the desired
+            result.</p>
+
+        <h3>Characteristics of a Good Algorithm</h3>
+        <ol>
+            <li>A good algorithm should always produce the correct answer for a valid input.</li>
+            <li>A good algorithm should solve the problem in less time.</li>
+            <li>A good algorithm should not consume unnecessary memory while solving a problem.</li>
+            <li>The steps of the algorithm should be clear and easy to follow.</li>
+            <li>A good algorithm should work for all valid inputs and not just a few test cases.</li>
+            <li>A good algorithm should finish after a finite number of steps and should not run forever.</li>
+        </ol>
+        <p>There can be multiple algorithms to solve the same problem, but not all of them are equally efficient. Some
+            algorithms may take more time to execute, while others may require more memory. As the size of input grows,
+            these differences become significant.</p>
+        <p>Imagine two students searching for a book in a library. Both eventually find the book, but one checks every
+            shelf one by one while the other directly goes to the correct section. Although both solve the problem, the
+            second method is more efficient.</p>
+        <p>Time Complexity and Space Complexity help us compare different algorithms and choose the one that uses less
+            time and memory.</p>
+
+        <h2>Time Complexity</h2>
+        <p>Time Complexity tells us how the running time of an algorithm changes as the size of input increases. It
+            helps us compare different algorithms and choose the faster one. Imagine two students searching for a book
+            in a library. One checks every shelf one by one, while the other directly goes to the correct section using
+            shelf numbers. The second student takes less time, so his method has better time complexity.</p>
+
+        <h2>Space Complexity</h2>
+        <p>Space Complexity tells us how much memory an algorithm needs as the size of input increases. Some algorithms
+            require extra memory to store temporary data while solving a problem. Imagine you are packing clothes for a
+            trip. One person uses a small bag and packs efficiently, while another uses three extra bags for the same
+            clothes. The first person uses less space, so his method has better space complexity.</p>
+
+        <p>DSA forms the foundation of problem-solving in computer science. While data structures help organize data
+            efficiently, algorithms help process that data effectively. Understanding these concepts is the first step
+            toward becoming a better programmer and software engineer.</p>
+    </div>
+
+</body>
+
+</html>
