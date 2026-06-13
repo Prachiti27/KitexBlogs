@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blogs | Kite's Blogs</title>
+
+    <style>
+        :root {
+            --bg: #F8F5F0;
+            --text: #1c1c1c;
+            --line: #999;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: Georgia, serif;
+            line-height: 1.9;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin: 30px auto;
+            border-radius: 8px;
+        }
+
+        h2 {
+            margin-top: 50px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            margin-top: 35px;
+            margin-bottom: 10px;
+        }
+
+        p,
+        ol {
+            margin-bottom: 18px;
+        }
+
+        .date {
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        ul {
+            padding-left: 25px;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            max-width: 700px;
+            max-height: 450px;
+            height: auto;
+            object-fit: contain;
+            margin: 35px auto;
+            border-radius: 8px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            padding: 50px 25px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        a {
+            color: var(--text);
+            text-decoration: none;
+            position: relative;
+        }
+
+        a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 1px;
+            background: var(--text);
+            transition: width .25s ease;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--line);
+            margin: 20px 0 40px;
+        }
+
+        .empty {
+            color: #666;
+            font-style: italic;
+        }
+
+        .blog-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .blog {
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .blog-date {
+            color: #777;
+            font-size: .9rem;
+        }
+
+        @media(max-width:768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>LLMs 101: A Beginner’s Guide</h1>
+        <p>The first time I used ChatGPT, I thought it was basically a smarter version of Google. I would ask a question, get an answer in seconds, and assume it was searching the internet behind the scenes. Turns out, that’s not how it works. In fact, one of the most surprising things I learned about Large Language Models is that they don’t actually know things the way humans do. They aren’t searching through a giant database of answers either. Instead, they’re doing something much simpler and somehow much more impressive. In this blog, I’ll explain what LLMs are, how they work, and what happens behind the scenes when you type a prompt in tools like ChatGPT.</p>
+
+        <h2>What Exactly Is an LLM?</h2>
+        <p>LLM stand for Large Language Model. Let’s break it down:</p>
+        <ul>
+            <li>Large because these models are trained on enormous amounts of data and contain billions of parameters.</li>
+            <li>Language because they work with text and human language.</li>
+            <li>Model because they are machine learning models trained to identify patterns.</li>
+        </ul>
+        <p>At a very high level, a LLM is a machine that predicts the next word. If I write </p>
+        <p>The capital of France is, you’ll probably think:</p>
+        <p>Paris, without even trying.</p>
+        <p>Your brain has seen enough language patterns to know what usually comes next. LLMs do something similar, except they’ve seen vastly more text than any human ever could.</p>
+        <img src="assets/llm/high-level-archi.png" alt="image"/>
+
+        <h2>How Does a LLM Learn?</h2>
+        <p>Think about how a child learns language. Nobody gives a baby a grammar textbook on day one. Instead, they hear conversations, read books, watch videos, and slowly begin noticing patterns. For example:</p>
+        <p>“Good Morning” sounds natural.</p>
+        <p>“Morning good” sounds strange.</p>
+        <p>Over time, humans develop an intuition for language. LLMs learn in a somewhat similar way. During training, they process massive amounts oof text collected from books, websites, articles, research papers, documentation and many other sources. The model repeatedly tries to predict missing words. When it predicts incorrectly, it adjusts itself. When it predicts correctly, it reinforces what it has learned. After doing this billions of times, the model becomes surprisingly good at understanding language patterns.</p>
+
+        <h2>The First Step: Tokenization</h2>
+        <p>Before an LLM can process text, it needs to convert words into something a computer understands. Computers don’t understand words. They understand numbers. So when you type:</p>
+        <p>I love machine learning</p>
+        <p>the model first breaks the sentence into smaller pieces called tokens. For example:</p>
+        <p>[”I”, “love”, “machine”, “learning”]</p>
+        <p>Each token gets assigned a numerical ID Something like this </p>
+        <p>I          → 421</p>
+        <p>love       → 874</p>
+        <p>machine    → 2910</p>
+        <p>learning   → 5342</p>
+        <p>These numbers become the model’s input. Think of tokenization as translating human language into a language computers can work with.</p>
+        <img src="assets/llm/tokenization.png" alt="tokenization-img"/>
+
+        <h2>Why Numbers Alone Aren’t Enough</h2>
+        <p>Suppose I tell you:</p>
+        <p>cat → 100</p>
+        <p>dog → 200</p>
+        <p>car → 300</p>
+        <p>Can you tell which words are related? Not really. To a computer, they’re just random numbers. That’s where embeddings come in. Embeddings convert tokens into vectors(lists of numbers that capture meaning). The interesting part is similar words often end up close together in this vector space. For example, cat, dog and puppy may have similar representations while car, airplane and train might form different cluster. This allows the model to understand relationships between concepts instead of treating every word as completely unrelated.</p>
+        <img src="assets/llm/context.png" alt="image"/>
+
+        <h2>The Problem of Word Order</h2>
+        <p>Now consider these two sentences: </p>
+        <p>Dog bites man </p>
+        <p>and </p>
+        <p>Man bites dog</p>
+        <p>Completely different meaning. If the model only looked at words individually, it wouldn’t know the difference. This is why positional information is added. The model needs to know which words are present and where they appear. Without position, language loses meaning.</p>
+
+        <h2>Attention: The Idea That Changed Everything</h2>
+        <p>If there’s one concept that made modern LLMs possible, it’s attention. Let’s look at a sentence:</p>
+        <p>The student submitted the assignment because he wanted a good grade.</p>
+        <p>What does he refer to? Humans immediately connect it to “student”. But how? When we read, we naturally focus on important words and relationships. Attention allows a model to do something similar. Instead of treating every word equally, the model learns which words matter most when understanding a particular token. This helps it capture context and relationships across a sentence.</p>
+
+        <h2>Transformers</h2>
+        <p>In 2017, researchers  introduced a new architecture called the Transformer. Most modern LLMs are built on top of this idea. A transformer consists of multiple layers stacked on top of each other. Each layer helps the model build a deeper understanding of the text. You can think of it like reading a paragraph multiple times.</p>
+        <p>First pass  :       Understand the words.</p>
+        <p>Second pass :       Understand the grammar.</p>
+        <p>Third pass  :       Understand the meaning.</p>
+        <p>Fourth pass :       Understand the context.</p>
+        <p>The actual process is much more mathematical, but this intuition is surprisingly close to what’s happening.</p>
+        <p>How Does ChatGPT Generate Responses?</p>
+        <p>Suppose you ask:</p>
+        <p>Explain machine learning</p>
+        <p>The model processes your prompt and predicts the most likely next token. Maybe it predicts:</p>
+        <p>Machine</p>
+        <p>Then it predicts the next token after that. Then another and another. The process repeats until a complete response is generated. What’s fascinating is that the model isn’t generating an entire paragraph at once. Every answer you see is built through thousands of tiny predictions.</p>
+        <img src="assets/llm/transformer.png" alt="transformer"/>
+        <p>If you want to explore more about transformer architecture check the blog - <a href="transformer-architecture.html">Transformer Architecture</a></p>
+
+        <h2>Why Do LLMs Sometimes Make Mistakes?</h2>
+        <p>One thing that surprised me when learning about LLMs is that they aren’t designed to tell the truth. They’re designed to generate plausible text. Most of the time, those two things overlap. Sometimes they don’t. This leads to hallucinations, where a model confidently generates information that sounds correct but it actually false. For example, it might misquote sources, create fake citations. That’s why critical thinking is still important when using AI tools.</p>
+
+        <h2>Why Are LLMs Such a Big Deal?</h2>
+        <p>Despite their limitations, LLMs are incredibly powerful. The same underlying technology can write code, summarize docs, translate languages, answer questions, power AI agents, etc. Few years ago, many of these tasks required separate systems. Now a single model can perform all of them surprisingly well.</p>
+
+        <h2>Final Thoughts</h2>
+        <p>The more I learn about LLMs, the more fascinating they become. If you'd like to explore the implementation side of things, I've built a simple LLM implementation from scratch here:  <a href="https://github.com/Prachiti27/KiteLLM">Github</a></p>
+        <p>Feel free to check it out and experiment with it yourself.</p>
+    </div>
+
+</body>
+
+</html>
